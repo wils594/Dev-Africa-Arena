@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admission | DevAfrica Arena</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-gold: #f39c12;
+            --brand-dark: #111111;
+            --accent-gradient: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            --glass-nav-bg: rgba(0, 0, 0, 0.85);
+            --glass-card-bg: rgba(255, 255, 255, 0.85);
+            --glass-card-border: rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--brand-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar { padding: 20px 0; z-index: 1000; }
+        .nav-container {
+            background: var(--glass-nav-bg);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 10px 25px;
+        }
+        .nav-link { font-weight: 600; color: rgba(255,255,255,0.8) !important; font-size: 0.8rem; text-transform: uppercase; }
+        .nav-link:hover { color: var(--brand-gold) !important; }
+
+        /* --- HERO --- */
+        .hero-section {
+            padding: 160px 0 60px;
+            background: radial-gradient(circle at top right, rgba(243, 156, 18, 0.1), transparent);
+        }
+
+        /* --- CRITERIA CARDS --- */
+        .criteria-card {
+            background: white;
+            border: 1px solid var(--glass-card-border);
+            border-radius: 24px;
+            padding: 40px;
+            height: 100%;
+            transition: 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        .criteria-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-gold);
+        }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(243, 156, 18, 0.1);
+            color: var(--brand-gold);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        /* --- ALERT BOX --- */
+        .fee-alert {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .text-gradient {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-gold {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+        .btn-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <div class="nav-container d-flex align-items-center justify-content-between w-100">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo-deafricaarena.png" alt="Logo" height="50">
+            </a>
+            <ul class="navbar-nav ms-auto d-none d-lg-flex">
+                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="a-propos.html">À Propos</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Candidature</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-800 mb-3" data-aos="fade-up">Critères d'<span class="text-gradient">Admissibilité</span></h1>
+        <p class="lead text-muted mx-auto" style="max-width: 700px;" data-aos="fade-up" data-aos-delay="100">
+            Avant de rejoindre l'arène, assurez-vous de remplir les conditions nécessaires pour garantir le haut niveau de compétition.
+        </p>
+    </div>
+</header>
+
+<section class="pb-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="criteria-card">
+                    <div class="icon-box"><i class="bi bi-person-check"></i></div>
+                    <h4 class="fw-bold">Profil & Disponibilité</h4>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> +18 ans (ou mineur prodige avec accord).</li>
+                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> Présence physique à Lomé obligatoire.</li>
+                        <li><i class="bi bi-dot text-warning"></i> Libre durant les 2 jours du cycle.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="criteria-card">
+                    <div class="icon-box"><i class="bi bi-code-slash"></i></div>
+                    <h4 class="fw-bold">Niveau Technique</h4>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> Maîtrise d'un langage (JS, Python, PHP...).</li>
+                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> Bases solides en Algo & Logique.</li>
+                        <li><i class="bi bi-dot text-warning"></i> Usage fluide de Git et VS Code.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="criteria-card">
+                    <div class="icon-box"><i class="bi bi-lightning-charge"></i></div>
+                    <h4 class="fw-bold">Mindset de Champion</h4>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> Capacité à coder sous pression.</li>
+                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> Respect strict du fair-play.</li>
+                        <li><i class="bi bi-dot text-warning"></i> 0% IA (ChatGPT interdit en sélection).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="fee-alert text-center" data-aos="zoom-in">
+            <h5 class="fw-bold mb-1 text-dark">Informations Importantes</h5>
+            <p class="mb-0">L'inscription finale s'élève à <strong>10 000 FCFA</strong>. Ce montant n'est dû qu'après l'étude et la validation de votre dossier technique par nos experts.</p>
+        </div>
+
+        <div class="mt-5 pt-5 border-top" id="form-section">
+            <div class="text-center mb-5">
+                <h2 class="fw-800">Prêt pour le <span class="text-gradient">Challenge ?</span></h2>
+                <p class="text-muted">Remplissez ce formulaire pour soumettre votre dossier.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="criteria-card">
+                        <form action="#">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Nom Complet</label>
+                                    <input type="text" class="form-control form-control-lg border-0 bg-light" placeholder="Ex: Jean Koffi">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">E-mail</label>
+                                    <input type="email" class="form-control form-control-lg border-0 bg-light" placeholder="jean@exemple.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Numéro WhatsApp</label>
+                                    <input type="tel" class="form-control form-control-lg border-0 bg-light" placeholder="+228 90 00 00 00">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Langage Principal</label>
+                                    <select class="form-select form-select-lg border-0 bg-light">
+                                        <option selected>Choisir...</option>
+                                        <option>JavaScript / TypeScript</option>
+                                        <option>Python</option>
+                                        <option>PHP (Laravel/Symfony)</option>
+                                        <option>Dart (Flutter)</option>
+                                        <option>Java / Kotlin</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Lien GitHub ou Portfolio (Optionnel)</label>
+                                    <input type="url" class="form-control form-control-lg border-0 bg-light" placeholder="https://github.com/votre-compte">
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check mt-3">
+                                        <input class="form-check-input" type="checkbox" id="checkCrit">
+                                        <label class="form-check-label small text-muted" for="checkCrit">
+                                            Je certifie avoir pris connaissance des critères d'admissibilité et m'engage à être présent physiquement à Lomé pour l'événement.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-gold btn-lg w-100">Soumettre ma Candidature</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-5 bg-white border-top mt-5">
+    <div class="container text-center">
+        <p class="small text-muted mb-0">© 2026 DevAfrica Arena. L'excellence numérique au cœur de Lomé.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
+
+</body>
+</html>

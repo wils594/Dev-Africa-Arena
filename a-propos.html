@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>À Propos | DevAfrica Arena</title>
+    <title>À Propos | DevAfrica Arena - L'Arène des Talents</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,10 +15,8 @@
             --brand-gold: #f39c12;
             --brand-dark: #111111;
             --accent-gradient: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-            /* Glassmorphism Noir pour la Nav */
             --glass-nav-bg: rgba(0, 0, 0, 0.85);
             --glass-nav-border: rgba(255, 255, 255, 0.1);
-            /* Glassmorphism pour les cartes sur fond blanc */
             --glass-card-bg: rgba(255, 255, 255, 0.8);
             --glass-card-border: rgba(0, 0, 0, 0.08);
         }
@@ -30,16 +28,14 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR GLASSMORPHISM NOIR --- */
+        /* --- NAVBAR --- */
         .navbar { padding: 20px 0; z-index: 1000; }
         .nav-container {
             background: var(--glass-nav-bg);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--glass-nav-border);
             border-radius: 20px;
             padding: 10px 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
         .navbar-logo { height: 50px; }
         .nav-link {
@@ -49,57 +45,47 @@
         }
         .nav-link:hover, .nav-link.active { color: var(--brand-gold) !important; }
 
-        /* --- HERO & SNOW --- */
+        /* --- HERO --- */
         .page-header {
             padding: 180px 0 100px;
             position: relative;
             background: radial-gradient(circle at top right, rgba(243, 156, 18, 0.05), transparent);
-            overflow: hidden;
         }
-
         #snow-canvas {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1;
-            pointer-events: none;
+            z-index: 1; pointer-events: none;
         }
-        
         .text-gradient {
             background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* --- CARDS STYLE --- */
+        /* --- CARDS & SECTIONS --- */
         .card-glass {
             background: var(--glass-card-bg);
             border: 1px solid var(--glass-card-border);
             border-radius: 24px;
             padding: 30px;
             height: 100%;
-            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            position: relative;
-            z-index: 2;
+            transition: 0.4s;
         }
         .card-glass:hover {
             border-color: var(--brand-gold);
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
-
-        .section-light {
-            background-color: #fcfcfc;
-            border-top: 1px solid #f0f0f0;
-            border-bottom: 1px solid #f0f0f0;
+        .badge-step {
+            background: var(--brand-gold);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
         }
-
-        /* --- FOOTER --- */
-        footer {
-            background: #ffffff;
-            padding: 50px 0;
-            border-top: 1px solid #eeeeee;
-        }
+        .section-light { background-color: #fcfcfc; border-top: 1px solid #f0f0f0; }
     </style>
 </head>
 <body>
@@ -124,9 +110,9 @@
 <header class="page-header text-center">
     <canvas id="snow-canvas"></canvas>
     <div class="container" style="position: relative; z-index: 2;">
-        <h1 class="display-3 fw-800" data-aos="fade-up">Notre <span class="text-gradient">Vision</span></h1>
-        <p class="lead text-muted mx-auto" style="max-width: 700px;" data-aos="fade-up" data-aos-delay="100">
-            Découvrez comment DevAfrica Arena transforme le paysage numérique africain en formant une élite technologique prête pour les défis mondiaux.
+        <h1 class="display-3 fw-800" data-aos="fade-up">L'Arène des <span class="text-gradient">Talents Numériques</span></h1>
+        <p class="lead text-muted mx-auto" style="max-width: 800px;" data-aos="fade-up" data-aos-delay="100">
+            Le premier championnat technologique bimestriel à Lomé qui transforme le recrutement en un show e-sport de haute intensité.
         </p>
     </div>
 </header>
@@ -135,18 +121,33 @@
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6" data-aos="fade-right">
-                <h2 class="fw-bold mb-4" style="color: #111;">Qui sommes-nous ?</h2>
+                <h2 class="fw-bold mb-4">Pourquoi DevAfrica Arena ?</h2>
                 <p class="text-muted fs-5">
-                    Fondé en 2024, DevAfrica Arena est plus qu'un centre de formation. C'est un écosystème conçu pour combler le fossé entre l'éducation académique et les exigences réelles du marché technologique.
+                    Au Togo, le talent tech explose, mais reste souvent invisible. Les entreprises peinent à évaluer les compétences réelles tandis que les développeurs cherchent une scène pour briller.
                 </p>
                 <p class="text-muted fs-5">
-                    Nous croyons que le talent est universel, mais que l'opportunité ne l'est pas encore. Notre mission est de dénicher et de propulser les génies du code partout sur le continent.
+                    <strong>DevAfrica Arena</strong> crée ce pont direct. Nous transformons l'évaluation technique en un spectacle public rigoureux et divertissant, pour dénicher l'élite du code.
                 </p>
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <h3 class="text-gradient fw-bold">100</h3>
+                        <p class="small text-uppercase fw-bold">Candidats par édition</p>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="text-gradient fw-bold">Bimestriel</h3>
+                        <p class="small text-uppercase fw-bold">Fréquence des chocs</p>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
-                <div class="position-relative">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-5 shadow-lg" alt="Team">
-                    <div style="position:absolute; top:-20px; left:-20px; width:100px; height:100px; border-left:5px solid var(--brand-gold); border-top:5px solid var(--brand-gold); border-radius: 20px 0 0 0;"></div>
+                <div class="card-glass p-4">
+                    <h4 class="fw-bold mb-4">Nos Objectifs</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-warning me-2"></i> Valoriser l'excellence technique (Junior à Senior).</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-warning me-2"></i> Offrir une plateforme de recrutement dynamique.</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-warning me-2"></i> Dynamiser l'écosystème tech de Lomé.</li>
+                        <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Créer un label de compétence reconnu.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -156,34 +157,40 @@
 <section class="py-5 section-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color: #111;">Nos Valeurs <span class="text-gradient">Fondamentales</span></h2>
+            <h2 class="fw-bold">Le Cycle <span class="text-gradient">Bimestriel</span></h2>
+            <p class="text-muted">Un processus de sélection impitoyable pour ne garder que les meilleurs.</p>
         </div>
         <div class="row g-4">
-            <div class="col-md-4" data-aos="zoom-in">
-                <div class="card-glass text-center">
-                    <div class="mb-3">
-                        <i class="bi bi-rocket-takeoff fs-1 text-warning"></i>
-                    </div>
-                    <h4 class="fw-bold">Excellence</h4>
-                    <p class="text-muted">Nous ne visons rien de moins que le standard international de qualité.</p>
+            <div class="col-md-6" data-aos="fade-up">
+                <div class="card-glass">
+                    <span class="badge-step">JOUR 1 : SÉLECTION DAY</span>
+                    <h4 class="fw-bold">Phase Technique</h4>
+                    <p class="text-muted small"><strong>Matin : Le Grand Quiz</strong><br>100 candidats s'affrontent sur la logique, l'algo et la culture tech. Seuls les 20 meilleurs passent.</p>
+                    <p class="text-muted small"><strong>Après-midi : Code Challenge</strong><br>Défis techniques complexes sous pression. Le jury sélectionne les 6 génies pour la finale.</p>
                 </div>
             </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                <div class="card-glass text-center">
-                    <div class="mb-3">
-                        <i class="bi bi-people fs-1 text-warning"></i>
-                    </div>
-                    <h4 class="fw-bold">Collaboration</h4>
-                    <p class="text-muted">L'intelligence collective est notre plus grande force.</p>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-glass" style="background: var(--brand-dark); color: white;">
+                    <span class="badge-step">JOUR 2 : LA GRANDE FINALE</span>
+                    <h4 class="fw-bold text-white">Le Show Public (Gala)</h4>
+                    <p class="text-light opacity-75 small"><strong>Le Duel Final (3h)</strong><br>Live Coding projeté sur écran géant avec commentaires en direct devant un public mixte.</p>
+                    <p class="text-light opacity-75 small"><strong>Récompenses</strong><br>Cash Prize immédiat, trophées, et mise en relation prioritaire avec les entreprises partenaires.</p>
                 </div>
             </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="card-glass text-center">
-                    <div class="mb-3">
-                        <i class="bi bi-lightbulb fs-1 text-warning"></i>
-                    </div>
-                    <h4 class="fw-bold">Innovation</h4>
-                    <p class="text-muted">Toujours à la pointe des nouvelles technologies et méthodologies.</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-5">Vision <span class="text-gradient">2026</span></h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <p class="fs-5 text-muted">
+                    Notre ambition est de stabiliser cette communauté à Lomé avant de positionner <strong>DevAfrica Arena</strong> comme la référence absolue du recrutement et de la certification tech en Afrique de l'Ouest.
+                </p>
+                <div class="mt-4">
+                    <a href="index.html#inscription" class="btn btn-warning btn-lg px-5 fw-bold rounded-pill text-white" style="background: var(--accent-gradient); border:none;">Rejoindre l'Arène</a>
                 </div>
             </div>
         </div>
@@ -192,7 +199,7 @@
 
 <footer>
     <div class="container text-center">
-        <p class="small text-muted mb-0">© 2026 DevAfrica Arena. L'avenir du numérique africain.</p>
+        <p class="small text-muted mb-0">© 2026 DevAfrica Arena. L'avenir du numérique africain au Togo.</p>
     </div>
 </footer>
 
@@ -200,12 +207,9 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 1000, once: true });
-
-    // --- SNOW ANIMATION ---
     const canvas = document.getElementById('snow-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
-
     function init() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -219,7 +223,6 @@
             });
         }
     }
-
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'rgba(200, 200, 200, 0.3)'; 
@@ -232,9 +235,7 @@
         });
         requestAnimationFrame(animate);
     }
-
-    init();
-    animate();
+    init(); animate();
     window.addEventListener('resize', init);
 </script>
 
