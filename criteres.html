@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admission | DevAfrica Arena</title>
+    <title>Critères & Inscription | DevAfrica Arena</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,230 +15,224 @@
             --brand-gold: #f39c12;
             --brand-dark: #111111;
             --accent-gradient: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-            --glass-nav-bg: rgba(0, 0, 0, 0.85);
-            --glass-card-bg: rgba(255, 255, 255, 0.85);
-            --glass-card-border: rgba(0, 0, 0, 0.08);
         }
 
-        body {
-            background-color: #f8f9fa;
-            color: var(--brand-dark);
+        body { 
+            background-color: #ffffff; 
+            color: var(--brand-dark); 
             font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
         }
 
-        /* --- NAVBAR --- */
-        .navbar { padding: 20px 0; z-index: 1000; }
-        .nav-container {
-            background: var(--glass-nav-bg);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 10px 25px;
-        }
-        .nav-link { font-weight: 600; color: rgba(255,255,255,0.8) !important; font-size: 0.8rem; text-transform: uppercase; }
-        .nav-link:hover { color: var(--brand-gold) !important; }
-
-        /* --- HERO --- */
-        .hero-section {
-            padding: 160px 0 60px;
-            background: radial-gradient(circle at top right, rgba(243, 156, 18, 0.1), transparent);
+        #snow-canvas {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; pointer-events: none;
         }
 
-        /* --- CRITERIA CARDS --- */
-        .criteria-card {
-            background: white;
-            border: 1px solid var(--glass-card-border);
-            border-radius: 24px;
-            padding: 40px;
-            height: 100%;
-            transition: 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-        }
-        .criteria-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--brand-gold);
-        }
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background: rgba(243, 156, 18, 0.1);
-            color: var(--brand-gold);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
+        .content-wrapper { position: relative; z-index: 2; }
+        .text-gradient { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* --- ALERT BOX --- */
-        .fee-alert {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 40px;
+        /* Critères Techniques */
+        .tech-badge {
+            display: inline-block; padding: 8px 20px; margin: 5px;
+            background: #f8f9fa; border: 1px solid #eee; border-radius: 50px;
+            font-size: 0.9rem; font-weight: 600; color: #555;
         }
+        .category-title { border-left: 4px solid var(--brand-gold); padding-left: 15px; margin-bottom: 25px; font-weight: 800; }
 
-        .text-gradient {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .btn-gold {
-            background: var(--accent-gradient);
+        /* Formulaire */
+        .registration-box {
+            background: var(--brand-dark);
             color: white;
+            border-radius: 40px;
+            padding: 60px;
+            margin-bottom: 80px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+
+        .form-label { font-weight: 600; font-size: 0.85rem; color: #aaa; text-transform: uppercase; margin-bottom: 8px; }
+        
+        .form-control, .form-select {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 15px;
+            color: white !important;
+        }
+
+        .form-control:focus { background: rgba(255,255,255,0.08); border-color: var(--brand-gold); box-shadow: none; }
+
+        .btn-register {
+            background: var(--accent-gradient);
             border: none;
-            padding: 15px 40px;
+            padding: 18px 40px;
             border-radius: 50px;
             font-weight: 800;
+            color: white;
+            width: 100%;
             transition: 0.3s;
         }
-        .btn-gold:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
-            color: white;
-        }
+
+        #my-form-status { margin-top: 20px; font-weight: 600; }
+        .success { color: #2ecc71; }
+        .error { color: #e74c3c; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-        <div class="nav-container d-flex align-items-center justify-content-between w-100">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/logo-deafricaarena.png" alt="Logo" height="50">
-            </a>
-            <ul class="navbar-nav ms-auto d-none d-lg-flex">
-                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="a-propos.html">À Propos</a></li>
-                <li class="nav-item"><a class="nav-link active" href="#">Candidature</a></li>
-            </ul>
+<canvas id="snow-canvas"></canvas>
+
+<div class="content-wrapper">
+    <header class="py-5 mt-5 text-center">
+        <div class="container">
+            <span class="badge bg-dark rounded-pill px-3 py-2 mb-3">DEVAFRICA ARENA</span>
+            <h1 class="display-4 fw-800 mb-3" data-aos="fade-up">Critères & <span class="text-gradient">Inscription</span></h1>
         </div>
-    </div>
-</nav>
+    </header>
 
-<header class="hero-section text-center">
-    <div class="container">
-        <h1 class="display-4 fw-800 mb-3" data-aos="fade-up">Critères d'<span class="text-gradient">Admissibilité</span></h1>
-        <p class="lead text-muted mx-auto" style="max-width: 700px;" data-aos="fade-up" data-aos-delay="100">
-            Avant de rejoindre l'arène, assurez-vous de remplir les conditions nécessaires pour garantir le haut niveau de compétition.
-        </p>
-    </div>
-</header>
-
-<section class="pb-5">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="criteria-card">
-                    <div class="icon-box"><i class="bi bi-person-check"></i></div>
-                    <h4 class="fw-bold">Profil & Disponibilité</h4>
-                    <ul class="list-unstyled text-muted">
-                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> +18 ans (ou mineur prodige avec accord).</li>
-                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> Présence physique à Lomé obligatoire.</li>
-                        <li><i class="bi bi-dot text-warning"></i> Libre durant les 2 jours du cycle.</li>
-                    </ul>
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="category-title text-uppercase">Frontend & Design</h3>
+                    <div class="mb-4">
+                        <span class="tech-badge">React / Next.js</span>
+                        <span class="tech-badge">Vue 3</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                        <span class="tech-badge">TypeScript</span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="criteria-card">
-                    <div class="icon-box"><i class="bi bi-code-slash"></i></div>
-                    <h4 class="fw-bold">Niveau Technique</h4>
-                    <ul class="list-unstyled text-muted">
-                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> Maîtrise d'un langage (JS, Python, PHP...).</li>
-                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> Bases solides en Algo & Logique.</li>
-                        <li><i class="bi bi-dot text-warning"></i> Usage fluide de Git et VS Code.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="criteria-card">
-                    <div class="icon-box"><i class="bi bi-lightning-charge"></i></div>
-                    <h4 class="fw-bold">Mindset de Champion</h4>
-                    <ul class="list-unstyled text-muted">
-                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> Capacité à coder sous pression.</li>
-                        <li class="mb-2"><i class="bi bi-dot text-warning"></i> Respect strict du fair-play.</li>
-                        <li><i class="bi bi-dot text-warning"></i> 0% IA (ChatGPT interdit en sélection).</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="fee-alert text-center" data-aos="zoom-in">
-            <h5 class="fw-bold mb-1 text-dark">Informations Importantes</h5>
-            <p class="mb-0">L'inscription finale s'élève à <strong>10 000 FCFA</strong>. Ce montant n'est dû qu'après l'étude et la validation de votre dossier technique par nos experts.</p>
-        </div>
-
-        <div class="mt-5 pt-5 border-top" id="form-section">
-            <div class="text-center mb-5">
-                <h2 class="fw-800">Prêt pour le <span class="text-gradient">Challenge ?</span></h2>
-                <p class="text-muted">Remplissez ce formulaire pour soumettre votre dossier.</p>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="criteria-card">
-                        <form action="#">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Nom Complet</label>
-                                    <input type="text" class="form-control form-control-lg border-0 bg-light" placeholder="Ex: Jean Koffi">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">E-mail</label>
-                                    <input type="email" class="form-control form-control-lg border-0 bg-light" placeholder="jean@exemple.com">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Numéro WhatsApp</label>
-                                    <input type="tel" class="form-control form-control-lg border-0 bg-light" placeholder="+228 90 00 00 00">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Langage Principal</label>
-                                    <select class="form-select form-select-lg border-0 bg-light">
-                                        <option selected>Choisir...</option>
-                                        <option>JavaScript / TypeScript</option>
-                                        <option>Python</option>
-                                        <option>PHP (Laravel/Symfony)</option>
-                                        <option>Dart (Flutter)</option>
-                                        <option>Java / Kotlin</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label small fw-bold">Lien GitHub ou Portfolio (Optionnel)</label>
-                                    <input type="url" class="form-control form-control-lg border-0 bg-light" placeholder="https://github.com/votre-compte">
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-check mt-3">
-                                        <input class="form-check-input" type="checkbox" id="checkCrit">
-                                        <label class="form-check-label small text-muted" for="checkCrit">
-                                            Je certifie avoir pris connaissance des critères d'admissibilité et m'engage à être présent physiquement à Lomé pour l'événement.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center mt-4">
-                                    <button type="submit" class="btn btn-gold btn-lg w-100">Soumettre ma Candidature</button>
-                                </div>
-                            </div>
-                        </form>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="category-title text-uppercase">Backend & Ops</h3>
+                    <div class="mb-4">
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">PostgreSQL</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="py-5 bg-white border-top mt-5">
-    <div class="container text-center">
-        <p class="small text-muted mb-0">© 2026 DevAfrica Arena. L'excellence numérique au cœur de Lomé.</p>
-    </div>
-</footer>
+    <section class="container">
+        <div class="registration-box" data-aos="zoom-in">
+            <form id="my-form" action="https://formspree.io/f/maqnreqk" method="POST">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <label class="form-label">Nom</label>
+                        <input type="text" name="nom" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Prénom</label>
+                        <input type="text" name="prenom" class="form-control" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Âge</label>
+                        <input type="number" name="age" class="form-control" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Niveau</label>
+                        <select name="niveau" class="form-select">
+                            <option>Junior</option>
+                            <option>Intermédiaire</option>
+                            <option>Senior</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Pays</label>
+                        <input type="text" name="pays" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Domaine</label>
+                        <input type="text" name="domaine" class="form-control" placeholder="Web / Mobile" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Diplôme</label>
+                        <input type="text" name="diplome" class="form-control" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Motivation</label>
+                        <textarea name="motivation" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Vision</label>
+                        <textarea name="vision" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="col-12 text-center mt-5">
+                        <button id="my-form-button" class="btn-register">Envoyer ma candidature</button>
+                        <p id="my-form-status"></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 1000, once: true });
-</script>
+    AOS.init({ duration: 800 });
 
+    // --- SCRIPT FORMULAIRE AJAX ---
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Candidature envoyée avec succès !";
+          status.className = "success";
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              status.innerHTML = "Erreur lors de l'envoi.";
+            }
+            status.className = "error";
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Erreur réseau.";
+        status.className = "error";
+      });
+    }
+    form.addEventListener("submit", handleSubmit);
+
+    // --- SCRIPT NEIGE ---
+    const canvas = document.getElementById('snow-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function init() {
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        particles = [];
+        for(let i=0; i<50; i++) {
+            particles.push({
+                x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                size: Math.random() * 2 + 1, speed: Math.random() * 0.5 + 0.1, opacity: Math.random() * 0.3
+            });
+        }
+    }
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            ctx.fillStyle = `rgba(180, 180, 180, ${p.opacity})`;
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+            p.y += p.speed; if(p.y > canvas.height) p.y = -5;
+        });
+        requestAnimationFrame(animate);
+    }
+    window.addEventListener('resize', init);
+    init(); animate();
+</script>
 </body>
 </html>
